@@ -1,16 +1,15 @@
-# from car import Car
-
 class Customer:
 	car_data = {
       'name':'hatchback',
-      'num_of_days':10
+      'num_of_days':10,
+	  'price':150
       }
 	rentedCars = [car_data]
 
 	def Rent(self,car):
 		self.rentedCars.append(car.RentCar())
 
-	def ReturnCar(self,obj):
+	def ReturnCar(self,obj,bill):
 		if self.rentedCars == []:
 			return print("you dose not have any rented cars")
 
@@ -22,20 +21,21 @@ class Customer:
 			i += 1
 
 		index = int(input('')) - 1
-		carName = self.rentedCars[index]['name']
+		car = self.rentedCars[index]
 
 		alreadyInStock = False
 		for stockCar in obj.stock :
-			if stockCar[0] == carName :
+			if stockCar[0] == car['name'] :
 				stockCar[1] += 1
 				alreadyInStock = True
 
 		if alreadyInStock == False :
-			stock = [ carName ,1]
+			stock = [ car['name'] ,1]
 			obj.stock.append(stock)
 	
 		self.rentedCars.pop(index)
 		
+		bill.newBill(car['name'],car['num_of_days'],car['price'])
 		obj.ShowStock()
 
 	def RentedCars(self):

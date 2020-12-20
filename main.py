@@ -1,19 +1,12 @@
-from car import Car
+from rental import Rental
 from customer import Customer
-
-class Rental:
-  pass
-
-class Bill:
-  pass
-
-class Stock:
-  pass
+from bill import Bill
 
 def main() :
 
-  car = Car()
-  customer = Customer()
+  agent     = Rental()
+  customer  = Customer()
+  bill      = Bill()
 
   while True:
     operation = input('''
@@ -22,20 +15,24 @@ def main() :
     [2] Rent a Car
     [3] Display rented cars
     [4] Return a car
+    [5] Show Bills
     [6] Exit programm
 		''')
 
     if operation == '1':
-      car.ShowStock()
+      agent.ShowStock()
 
     if operation == '2':
-      customer.Rent(car)
+      customer.Rent(agent)
 
     if operation == '3':
       customer.RentedCars()
 
     if operation == '4':
-      customer.ReturnCar(car)
+      customer.ReturnCar(agent,bill)
+
+    if operation == '5':
+      bill.listBills()
 
     if operation == '6':
       print ("exiting ")

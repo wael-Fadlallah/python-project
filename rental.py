@@ -1,4 +1,6 @@
-class Car:
+from customer import Customer
+
+class Rental:
   types = ['hatchback','sedan','SUV']
   CarType = types[0]
   stock = []
@@ -48,14 +50,22 @@ class Car:
         price = 100
 
     print( " You have rented a " + car[0] + " for " + str(days) + " you will be charged " + str(price) + " per day we hope you enjoy our service " )
+    price = price * days
 
     car_data = {
       'name':car[0],
-      'num_of_days':days
+      'num_of_days':days,
+      'price': price
       }
 
     self.ShowStock()
     return car_data
+
+
+
+
+
+    
 
 
 
