@@ -4,10 +4,12 @@ from bill import Bill
 
 def main() :
 
+# initat the objects
   agent     = Rental()
   customer  = Customer()
   bill      = Bill()
 
+# inifity loop that request user to input an option
   while True:
     operation = input('''
     Select operation:
@@ -19,6 +21,7 @@ def main() :
     [6] Exit programm
 		''')
 
+# check the option 
     if operation == '1':
       agent.ShowStock()
 

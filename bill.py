@@ -1,5 +1,6 @@
 class Bill:
 	bills = []
+	# issue a new bill with the provided data 
 	def newBill(self,carName,period,price,):
 			self.carName = carName
 			self.period  = period
@@ -12,7 +13,7 @@ class Bill:
 			self.bills.append(list)
 
 			return print('new bill have neen created')
-
+	# list all the current bills 
 	def listBills(self):
 		
 		i = 0 
