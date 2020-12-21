@@ -9,7 +9,7 @@ class Rental:
     self.stock.append(['hatchback',4])
     self.stock.append(['sedan',3])
     self.stock.append(['SUV',3])
-    print(self.stock)
+    # print(self.stock)
 
   def ShowStock(self):
     print( 'Available cars : \n ' )

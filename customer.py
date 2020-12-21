@@ -1,10 +1,10 @@
 class Customer:
-	car_data = {
-      'name':'hatchback',
-      'num_of_days':10,
-	  'price':150
-      }
-	rentedCars = [car_data]
+	# car_data = {
+    #   'name':'hatchback',
+    #   'num_of_days':10,
+	#   'price':150
+    #   }
+	rentedCars = []
 
 	def Rent(self,car):
 		self.rentedCars.append(car.RentCar())
@@ -46,5 +46,6 @@ class Customer:
 	def RentedCars(self):
 		if self.rentedCars == []:
 			return print("you dose not have any rented cars")
-		print(self.rentedCars)
+		for car in self.rentedCars :
+			print("-",car['name'],'rented for',car['num_of_days'],'days')
 
