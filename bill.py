@@ -11,7 +11,7 @@ class Bill:
 			}
 			self.bills.append(list)
 
-			return print(self.bills)
+			return print('new bill have neen created')
 
 	def listBills(self):
 		

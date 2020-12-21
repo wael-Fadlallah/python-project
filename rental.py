@@ -31,8 +31,13 @@ class Rental:
     # return print(car) 
 
     car[1] = car[1] - 1
+    
     print("How many days you want rent a " + car[0]+ " for :  " )
     days = int(input(''))
+
+    while days <= 0 :
+      print("invalid value for days input a number that greater than 0 : ")  
+      days = int(input(''))
 
     if days < 7 :
       if car[0] == 'hatchback':

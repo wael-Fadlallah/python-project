@@ -21,6 +21,11 @@ class Customer:
 			i += 1
 
 		index = int(input('')) - 1
+		i -= 1
+		if index >= i :
+			print(" car not found try again ")
+			index = int(input('')) - 1
+
 		car = self.rentedCars[index]
 
 		alreadyInStock = False
@@ -42,3 +47,4 @@ class Customer:
 		if self.rentedCars == []:
 			return print("you dose not have any rented cars")
 		print(self.rentedCars)
+
