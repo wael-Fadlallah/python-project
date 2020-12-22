@@ -16,7 +16,7 @@ class Bill:
 	# list all the current bills 
 	def listBills(self):
 		
-		i = 0 
+		i = 1 
 		for bill in self.bills :
 			print(str(i) + " - " + " a bill for " + bill['car'] + " total payment is " + str(bill['price']) )
 

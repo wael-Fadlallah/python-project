@@ -35,18 +35,14 @@ for i in range(len(L2)-1):
         L2_holder.append(L2[i]) 
 
 
-# L4.sort()
-# L3.sort()
 L1_holder.extend(L2_holder)
 L1_holder.sort()
 
 _L1.extend(_L2)
 _L1.sort()
 
-# _L1.extend(L1_holder)
-
 print(L1)
 print(L2)
-# print("result ",_L1)
+
 print(L1_holder)
-# print(L4)
+
