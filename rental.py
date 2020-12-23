@@ -1,8 +1,6 @@
 from customer import Customer
 
 class Rental:
-  # car types
-  types = ['hatchback','sedan','SUV']
   # the stock list
   stock = []
 
@@ -21,7 +19,7 @@ class Rental:
         print ('\t'+  str(i) + ' - ' + str(x[0]) + ' : ' +str( x[1]) + ' in stock ')
         i = i + 1 
 
-  def RentCar(self):
+  def RentCar(self,types_rates):
     i = 1 
     for x in self.stock :
       print ('\t'+  str(i) + ' - ' +x[0])
@@ -50,11 +48,11 @@ class Rental:
         price = 100
     else :
       if car[0] == 'hatchback':
-        price = 25
+        price = types_rates['hatchback']
       elif car[0] == 'sedan':
-        price = 50
+        price = types_rates['sedan']
       else:
-        price = 100
+        price = types_rates['SUV']
     # print the order and calcate price  
     print( " You have rented a " + car[0] + " for " + str(days) + " you will be charged " + str(price) + " per day we hope you enjoy our service " )
     price = price * days

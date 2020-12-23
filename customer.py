@@ -1,9 +1,12 @@
 class Customer:
 	# empty list for rented cars
 	rentedCars = []
+
+	# car types rates
+	types_rates = {'hatchback':25,'sedan':40,'SUV':90}
 	# call rent method from the rental class
 	def Rent(self,rental):
-		self.rentedCars.append(rental.RentCar())
+		self.rentedCars.append(rental.RentCar(self.types_rates))
 
 	def ReturnCar(self,obj,bill):
 		# if there is no cars to return print a message 
@@ -42,6 +45,7 @@ class Customer:
 		# issue a bill
 		bill.newBill(car['name'],car['num_of_days'],car['price'])
 		obj.ShowStock()
+		return True 
 
 	def RentedCars(self):
 		# if there is no rented cars print a message alse print a cars list
@@ -50,3 +54,7 @@ class Customer:
 		for car in self.rentedCars :
 			print("-",car['name'],'rented for',car['num_of_days'],'days')
 
+
+class VIP(Customer):
+	# car types rates
+	types_rates = {'hatchback':20,'sedan':35,'SUV':80}

@@ -1,13 +1,15 @@
 from rental import Rental
 from customer import Customer
+from customer import VIP
 from bill import Bill
 
-def main() :
 
 # initat the objects
-  agent     = Rental()
-  customer  = Customer()
-  bill      = Bill()
+agent     = Rental()
+customer  = Customer()
+VIP       = VIP()
+bill      = Bill()
+def main() :
 
 # inifity loop that request user to input an option
   while True:
@@ -18,6 +20,7 @@ def main() :
     [3] Display rented cars
     [4] Return a car
     [5] Show Bills
+    [6] VIP Section
     [6] Exit programm
 		''')
 
@@ -38,6 +41,9 @@ def main() :
       bill.listBills()
 
     if operation == '6':
+      VIP.Rent(agent)
+
+    if operation == '7':
       print ("exiting ")
       break
 
