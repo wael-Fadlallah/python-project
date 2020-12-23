@@ -21,7 +21,7 @@ def main() :
     [4] Return a car
     [5] Show Bills
     [6] VIP Section
-    [6] Exit programm
+    [7] Exit programm
 		''')
 
 # check the option 

@@ -1,8 +1,6 @@
 from unittest.mock import patch
 from unittest import TestCase
 
-# import unittest 
-
 from main import *
 
 class TestCarRental(TestCase):
@@ -16,7 +14,7 @@ class TestCarRental(TestCase):
     # test input for rent a car 
     @patch('main.input', return_value=['1', '42'])
     def test_rent_a_car(self,input):
-        # mocked_input.side_effect = 
+        # create a result to test it 
         result = agent.RentCar()
 
         self.assertEqual(result,{
