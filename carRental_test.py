@@ -15,10 +15,10 @@ class TestCarRental(TestCase):
     @patch('main.input', return_value=['1', '42'])
     def test_rent_a_car(self,input):
         # create a result to test it 
-        result = agent.RentCar()
+        result = agent.RentCar({'hatchback':25,'sedan':40,'SUV':90})
 
         self.assertEqual(result,{
         'name':'hatchback',
-        'num_of_days':42,
+        'num_of_days':-5,
         'price':1050
         })

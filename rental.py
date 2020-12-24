@@ -11,6 +11,7 @@ class Rental:
     self.stock.append(['SUV',3])
     # print(self.stock)
   
+  # loop and print all the stock cars  
   def ShowStock(self):
     print( 'Available cars : \n ' )
     i = 1 
@@ -18,7 +19,8 @@ class Rental:
       if x[1] != 0 :  
         print ('\t'+  str(i) + ' - ' + str(x[0]) + ' : ' +str( x[1]) + ' in stock ')
         i = i + 1 
-
+  # rent a car from the stock 
+  # return a dict hold the rented car data 
   def RentCar(self,types_rates):
     i = 1 
     for x in self.stock :

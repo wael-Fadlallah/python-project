@@ -7,7 +7,9 @@ class Customer:
 	# call rent method from the rental class
 	def Rent(self,rental):
 		self.rentedCars.append(rental.RentCar(self.types_rates))
-
+	
+	# return a car to the stock 
+	# return true if success 
 	def ReturnCar(self,obj,bill):
 		# if there is no cars to return print a message 
 		if self.rentedCars == []:
@@ -47,6 +49,7 @@ class Customer:
 		obj.ShowStock()
 		return True 
 
+	# print all rented cars 
 	def RentedCars(self):
 		# if there is no rented cars print a message alse print a cars list
 		if self.rentedCars == []:
@@ -55,6 +58,7 @@ class Customer:
 			print("-",car['name'],'rented for',car['num_of_days'],'days')
 
 
+# create a VIP class the extend customer and override the types_rates list 
 class VIP(Customer):
 	# car types rates
 	types_rates = {'hatchback':20,'sedan':35,'SUV':80}
