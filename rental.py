@@ -21,7 +21,7 @@ class Rental:
         i = i + 1 
   # rent a car from the stock 
   # return a dict hold the rented car data 
-  def RentCar(self,types_rates):
+  def RentCar(self,types_rates,isVip):
     i = 1 
     for x in self.stock :
       print ('\t'+  str(i) + ' - ' +x[0])
@@ -41,20 +41,29 @@ class Rental:
       print("invalid value for days input a number that greater than 0 : ")  
       days = int(input(''))
     # get the rate from the number of days 
-    if days < 7 :
-      if car[0] == 'hatchback':
-        price = 30 
-      elif car[0] == 'sedan':
-        price = 50 
-      else:
-        price = 100
-    else :
+    if isVip == False : 
+      if days < 7 :
+        if car[0] == 'hatchback':
+          price = 30 
+        elif car[0] == 'sedan':
+          price = 50 
+        else:
+          price = 100
+      else :
+        if car[0] == 'hatchback':
+          price = types_rates['hatchback']
+        elif car[0] == 'sedan':
+          price = types_rates['sedan']
+        else:
+          price = types_rates['SUV']
+    elif isVip == True : 
       if car[0] == 'hatchback':
         price = types_rates['hatchback']
       elif car[0] == 'sedan':
         price = types_rates['sedan']
       else:
         price = types_rates['SUV']
+
     # print the order and calcate price  
     print( " You have rented a " + car[0] + " for " + str(days) + " you will be charged " + str(price) + " per day we hope you enjoy our service " )
     price = price * days

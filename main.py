@@ -47,5 +47,5 @@ def main() :
       print ("exiting ")
       break
 
-# main()
+main()
 

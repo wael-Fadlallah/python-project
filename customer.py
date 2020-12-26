@@ -1,12 +1,13 @@
 class Customer:
 	# empty list for rented cars
 	rentedCars = []
+	isVip = False
 
 	# car types rates
 	types_rates = {'hatchback':25,'sedan':40,'SUV':90}
 	# call rent method from the rental class
 	def Rent(self,rental):
-		self.rentedCars.append(rental.RentCar(self.types_rates))
+		self.rentedCars.append(rental.RentCar(self.types_rates,self.isVip))
 	
 	# return a car to the stock 
 	# return true if success 
@@ -62,3 +63,4 @@ class Customer:
 class VIP(Customer):
 	# car types rates
 	types_rates = {'hatchback':20,'sedan':35,'SUV':80}
+	isVip = True
